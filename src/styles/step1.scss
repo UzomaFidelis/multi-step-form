@@ -1,0 +1,33 @@
+@use "variables" as vars;
+
+.step-one {
+  &__input {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border-radius: 3px;
+    border: 1px solid vars.$pastel-blue;
+    margin-bottom: 0.93rem;
+    &::placeholder {
+      font-size: 0.93rem;
+      font-weight: 500;
+      font-family: Ubuntu, sans-serif;
+      color: vars.$cool-gray;
+    }
+    &:hover {
+      border: 1px solid vars.$purplish-blue;
+    }
+  }
+  &__label {
+    margin-bottom: 0.3rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__error-text {
+    color: vars.$strawberry-red;
+    font-weight: 500;
+  }
+}
+.personal-info {
+  border: none;
+  padding: 0;
+}

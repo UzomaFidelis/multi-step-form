@@ -1,0 +1,32 @@
+@use "variables" as vars;
+
+.form {
+  &-input {
+    height: fit-content;
+    width: 91.5%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 20px 30px -4px rgb(230, 230, 230);
+    position: relative;
+    top: -4.5rem;
+    overflow: hidden;
+  }
+}
+.step {
+  padding: 1.97rem 1.44rem 1.2rem;
+  &__legend {
+    margin-bottom: 1.23rem;
+  }
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.67rem;
+  }
+  &__description {
+    line-height: 1.55rem;
+  }
+}
+.form-set {
+  border: none;
+  padding: 0;
+}

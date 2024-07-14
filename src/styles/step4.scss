@@ -1,0 +1,87 @@
+@use "variables" as vars;
+@use "mixins" as mxns;
+
+.finishing {
+  &__legend {
+    margin-bottom: 1.5rem;
+  }
+}
+.form-choice {
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: rgba(vars.$light-blue, 0.1);
+
+  &__plan-name {
+    text-transform: capitalize;
+  }
+  &__billing-type {
+    text-transform: capitalize;
+  }
+
+  &__change-btn {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0;
+    @include mxns.font-ubuntu;
+    text-decoration: underline;
+    color: vars.$cool-gray;
+    font-size: 0.92rem;
+    &:hover {
+      color: vars.$purplish-blue;
+    }
+  }
+  &__plan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.9rem;
+    &-type {
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: vars.$marine-blue;
+    }
+    &-price {
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: vars.$marine-blue;
+    }
+  }
+  &__divider {
+    border: none;
+    border-top: 1px solid vars.$light-gray;
+  }
+  &__addons {
+    padding: 0;
+    list-style: none;
+    margin-top: 0.4rem;
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+    }
+    &-name {
+      color: vars.$cool-gray;
+      font-size: 0.9rem;
+    }
+    &-price {
+      color: rgb(80, 80, 80);
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+  }
+}
+.plan-total {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  margin-top: 0.2rem;
+  &__name {
+    color: vars.$cool-gray;
+    font-size: 0.9rem;
+  }
+  &__amount {
+    font-weight: 700;
+    color: vars.$purplish-blue;
+  }
+}

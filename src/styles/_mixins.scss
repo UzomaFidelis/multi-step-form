@@ -1,0 +1,36 @@
+@mixin fonts {
+  @font-face {
+    font-family: Ubuntu;
+    src: url(../assets/fonts/Ubuntu-Regular.ttf);
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: Ubuntu;
+    src: url(../assets/fonts/Ubuntu-Medium.ttf);
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: Ubuntu;
+    src: url(../assets/fonts/Ubuntu-Bold.ttf);
+    font-weight: 700;
+  }
+}
+@mixin font-ubuntu {
+  font-family: Ubuntu, sans-serif;
+}
+@mixin form-navigate-btn($bg-color) {
+  color: white;
+  background-color: $bg-color;
+  padding: 0.68rem 0.74rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 5px;
+}
+@mixin bg-color-transition {
+  transition: background-color 200ms;
+}
+@mixin border-color-transition {
+  transition: border 300ms;
+}

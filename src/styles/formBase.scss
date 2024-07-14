@@ -1,0 +1,74 @@
+@use "mixins" as mxns;
+@use "variables" as vars;
+
+.step-progress {
+  height: 10.7rem;
+  width: 100%;
+  background-image: url(../assets/images/bg-sidebar-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+}
+.steps {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: white;
+  gap: 1.1rem;
+  height: fit-content;
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    width: 2rem;
+    border: 1px solid white;
+    border-radius: 100%;
+  }
+}
+.forms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(vars.$light-blue, 0.2);
+  min-height: 26.5rem;
+}
+.form-navigate {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+}
+.next {
+  @include mxns.form-navigate-btn(vars.$marine-blue);
+  @include mxns.font-ubuntu;
+  @include mxns.bg-color-transition;
+  &:hover {
+    background-color: rgba(vars.$marine-blue, 0.8);
+  }
+}
+
+.prev {
+  @include mxns.font-ubuntu;
+  color: vars.$cool-gray;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.01rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  transition: color 200ms;
+  &:hover {
+    color: vars.$marine-blue;
+  }
+}
+.confirm {
+  @include mxns.form-navigate-btn(vars.$purplish-blue);
+  @include mxns.font-ubuntu;
+  @include mxns.bg-color-transition;
+  &:hover {
+    background-color: rgba(vars.$purplish-blue, 0.7);
+  }
+}

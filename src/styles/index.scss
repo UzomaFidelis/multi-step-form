@@ -1,0 +1,33 @@
+@use "mixins" as mxns;
+@use "variables" as vars;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+@include mxns.fonts;
+body {
+  font-family: Ubuntu, sans-serif;
+  margin: 0;
+}
+
+.text {
+  &--dark-blue {
+    color: vars.$marine-blue;
+  }
+  &--cool-grey {
+    color: vars.$cool-gray;
+  }
+  &--label {
+    font-size: 0.78rem;
+  }
+}
+.block {
+  display: block;
+}
+.cursor-pointer {
+  cursor: pointer;
+}

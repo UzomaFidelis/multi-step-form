@@ -1,0 +1,63 @@
+@use "variables" as vars;
+@use "mixins" as mxns;
+
+.add-on {
+  &__label {
+    width: 100%;
+    border: 1px solid vars.$light-gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.65rem;
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    @include mxns.border-color-transition;
+    &:hover {
+      border: 1px solid vars.$purplish-blue;
+    }
+
+    &:has(.add-on__default-checkbox:checked) {
+      border: 1px solid vars.$purplish-blue;
+      background-color: vars.$magnolia;
+    }
+  }
+  &__detail {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  &__default-checkbox {
+    display: none;
+    &:checked + .add-on__checkbox {
+      background-color: vars.$purplish-blue;
+    }
+  }
+  &__checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 3px;
+    border: 1px solid vars.$light-gray;
+  }
+  &__name {
+    color: vars.$marine-blue;
+    font-weight: 700;
+    font-size: 0.84rem;
+  }
+
+  &__description {
+    color: vars.$cool-gray;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+  }
+  &__price {
+    font-size: 0.76rem;
+    color: vars.$purplish-blue;
+    font-weight: 500;
+  }
+}
