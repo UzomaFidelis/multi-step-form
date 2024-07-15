@@ -1,3 +1,5 @@
+@use "variables" as vars;
+
 @mixin fonts {
   @font-face {
     font-family: Ubuntu;
@@ -27,10 +29,29 @@
   font-size: 1rem;
   font-weight: 500;
   border-radius: 5px;
+  @media (min-width: vars.$desktop-xl) {
+    padding: 0.92rem 1.52rem;
+  }
 }
 @mixin bg-color-transition {
   transition: background-color 200ms;
 }
 @mixin border-color-transition {
   transition: border 300ms;
+}
+@mixin shake-animation {
+  @keyframes shake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    20%,
+    60% {
+      transform: translateX(-6px);
+    }
+    40%,
+    80% {
+      transform: translateX(6px);
+    }
+  }
 }

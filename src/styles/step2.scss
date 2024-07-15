@@ -97,3 +97,21 @@
     left: 1.4rem;
   }
 }
+@media (min-width: vars.$desktop-lg) {
+  .billing-plan {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 1.1rem;
+    &__label {
+      flex-direction: column;
+      flex: 1 1 0px;
+    }
+    &__detail {
+      margin-top: 1.8rem;
+    }
+  }
+  .plan-type {
+    max-width: unset;
+    margin-top: 1.5rem;
+  }
+}

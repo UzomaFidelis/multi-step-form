@@ -11,6 +11,7 @@ const FormInput = ({
   formState,
   dispatchFn,
   validation,
+  setValidation,
   completed,
 }: FormInputProps) => {
   return (
@@ -20,6 +21,7 @@ const FormInput = ({
           info={formState.userInfo}
           dispatchFn={dispatchFn}
           validation={validation}
+          setValidation={setValidation}
         />
       )}
       {formState.step === 2 && (

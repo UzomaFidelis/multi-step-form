@@ -75,6 +75,7 @@
   display: flex;
   padding: 1rem;
   justify-content: space-between;
+  align-items: center;
   margin-top: 0.2rem;
   &__name {
     color: vars.$cool-gray;
@@ -83,5 +84,35 @@
   &__amount {
     font-weight: 700;
     color: vars.$purplish-blue;
+  }
+}
+@media (min-width: vars.$desktop-xl) {
+  .form-choice {
+    &__plan {
+      margin-bottom: 1.6rem;
+    }
+    padding: 1.9rem 1.45rem 1.1rem 1.6rem;
+    &__plan-name {
+      font-size: 1.08rem;
+      letter-spacing: -0.03em;
+    }
+    &__billing-type {
+      font-size: 1rem;
+    }
+    &__change-btn {
+      margin-top: 0.3rem;
+    }
+    &__addons {
+      margin-top: 0.7rem;
+      &-item {
+        margin-bottom: 0.3rem;
+      }
+    }
+  }
+  .plan-total {
+    padding: 1rem 1.6rem;
+    &__amount {
+      font-size: 1.24rem;
+    }
   }
 }

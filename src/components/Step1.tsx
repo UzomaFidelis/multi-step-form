@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, Dispatch, SetStateAction } from "react";
 import "../styles/step1.scss";
 import { FormStepProps, UserDataValidation } from "../types";
 
@@ -6,10 +6,20 @@ const Step1 = ({
   info,
   dispatchFn,
   validation,
-}: FormStepProps & { validation: UserDataValidation }) => {
+  setValidation,
+}: FormStepProps & {
+  validation: UserDataValidation;
+  setValidation: Dispatch<SetStateAction<UserDataValidation>>;
+}) => {
   const handleNameInput = (e: ChangeEvent) => {
     if (e.target instanceof HTMLInputElement) {
       dispatchFn({ type: "name-set", payload: e.target.value });
+    }
+    if (!validation.name.notNull) {
+      setValidation({
+        ...validation,
+        name: { ...validation.name, notNull: true },
+      });
     }
   };
 
@@ -17,9 +27,21 @@ const Step1 = ({
     if (e.target instanceof HTMLInputElement) {
       dispatchFn({ type: "email-set", payload: e.target.value });
     }
+    if (!validation.email.notNull || !validation.email.validInput) {
+      setValidation({
+        ...validation,
+        email: { notNull: true, validInput: true },
+      });
+    }
   };
 
   const handlePhoneNumInput = (e: ChangeEvent) => {
+    if (!validation.phoneNum.notNull) {
+      setValidation({
+        ...validation,
+        phoneNum: { notNull: true },
+      });
+    }
     if (e.target instanceof HTMLInputElement) {
       let value = e.target.value;
 
@@ -60,7 +82,7 @@ const Step1 = ({
         <input
           type="text"
           id="name"
-          className="block step-one__input"
+          className={`block step-one__input ${!validation.name.notNull ? "input-error" : ""}`}
           placeholder="e.g. Stephen King"
           onChange={handleNameInput}
           value={info.name}
@@ -84,7 +106,7 @@ const Step1 = ({
         <input
           type="text"
           id="email"
-          className="block step-one__input"
+          className={`block step-one__input ${!validation.email.notNull || !validation.email.validInput ? "input-error" : ""}`}
           placeholder="e.g. stephenking@lorem.com"
           onChange={handleEmailInput}
           value={info.email}
@@ -103,7 +125,7 @@ const Step1 = ({
         <input
           type="text"
           id="phone-number"
-          className="block step-one__input"
+          className={`block step-one__input ${!validation.phoneNum.notNull ? "input-error" : ""}`}
           placeholder="e.g. +1 234 567 890"
           onChange={handlePhoneNumInput}
           value={info.phoneNum}

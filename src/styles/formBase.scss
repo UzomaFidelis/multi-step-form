@@ -8,9 +8,13 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center;
+  background-color: vars.$purplish-blue;
   display: flex;
   justify-content: center;
   padding-top: 2rem;
+}
+.glint {
+  display: none;
 }
 .steps {
   display: flex;
@@ -27,6 +31,11 @@
     width: 2rem;
     border: 1px solid white;
     border-radius: 100%;
+  }
+}
+.step-sidebar {
+  &__label {
+    display: none;
   }
 }
 .forms {
@@ -70,5 +79,126 @@
   @include mxns.bg-color-transition;
   &:hover {
     background-color: rgba(vars.$purplish-blue, 0.7);
+  }
+}
+
+@media (min-width: vars.$desktop) {
+  .subscription-form {
+    display: flex;
+    background-color: rgba(vars.$light-blue, 0.2);
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .step-progress {
+    flex: 0 0 30%;
+    background-image: url(../assets/images/bg-sidebar-desktop.svg);
+    height: auto;
+    border-radius: 8px;
+    padding: 2rem 1.2rem;
+    justify-content: flex-start;
+    transition: opacity 800ms;
+    position: relative;
+    overflow: hidden;
+  }
+  .glint {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -180%;
+    height: 100%;
+    width: 20rem;
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.08) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-20deg);
+    transition: left 700ms cubic-bezier(0.05, 0.36, 0.2, 1.01);
+  }
+  .content-wrapper {
+    display: flex;
+    width: 50rem;
+    height: 33rem;
+    align-items: stretch;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 20px 30px -3px rgb(230, 230, 230);
+    transition: box-shadow 300ms;
+    &:hover {
+      box-shadow: 0 20px 30px -3px rgb(210, 210, 210);
+    }
+    &:hover .step-progress {
+      opacity: 0.92;
+    }
+    &:hover .glint {
+      left: 150%;
+    }
+  }
+  .steps {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .step-sidebar {
+    display: flex;
+    gap: 0.8rem;
+    &__name {
+      color: vars.$light-gray;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+    &__description {
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    &__label {
+      display: inline;
+    }
+  }
+  .form-container {
+    flex: 1 1 auto;
+    padding: 0 1rem 0 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .forms {
+    min-height: unset;
+    background-color: transparent;
+  }
+}
+@media (min-width: vars.$desktop-xl) {
+  .content-wrapper {
+    width: 58.6rem;
+    height: 37.5rem;
+  }
+  .step-progress {
+    padding: 2.482rem 1.9rem;
+  }
+  .steps {
+    gap: 1.98rem;
+    &__item {
+      width: 2.1rem;
+      height: 2.1rem;
+    }
+  }
+  .step-sidebar {
+    gap: 1rem;
+    &__name {
+      letter-spacing: -0.03em;
+    }
+    &__description {
+      letter-spacing: 0.05em;
+    }
+  }
+  .form-container {
+    padding: 0.6rem 3.8rem 0 4.8rem;
+  }
+  .form-navigate {
+    padding: 1rem 1.4rem;
   }
 }

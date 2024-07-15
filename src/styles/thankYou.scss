@@ -7,9 +7,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // top: 50%;
-  // left: 50%;
-  // transform: translate(-50%, -50%);
   z-index: 3;
   &__content {
     text-align: center;
@@ -30,5 +27,34 @@
     color: vars.$cool-gray;
     font-size: 1rem;
     line-height: 1.58rem;
+  }
+}
+
+@media (min-width: vars.$desktop) {
+  .thankyou {
+    &__content {
+      padding: 2rem 1.3rem 2rem;
+    }
+    &__icon {
+      width: 4.2rem;
+      height: 4.2rem;
+      margin-bottom: 1.78rem;
+    }
+    &__title {
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+    }
+  }
+}
+@media (min-width: vars.$desktop-xl) {
+  .thankyou {
+    &__icon {
+      width: 5rem;
+      height: 5rem;
+    }
+    &__title {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+    }
   }
 }

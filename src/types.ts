@@ -54,6 +54,7 @@ export type FormInputProps = {
   formState: FormState;
   dispatchFn: Dispatch<FormAction>;
   validation: UserDataValidation;
+  setValidation: Dispatch<SetStateAction<UserDataValidation>>;
   completed: boolean;
 };
 export type StepOneState = {

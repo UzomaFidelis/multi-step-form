@@ -30,3 +30,28 @@
   border: none;
   padding: 0;
 }
+
+@media (min-width: vars.$desktop) {
+  .form {
+    &-input {
+      position: static;
+      top: 0;
+      width: 100%;
+      box-shadow: none;
+    }
+  }
+}
+@media (min-width: vars.$desktop-xl) {
+  .step {
+    &__legend {
+      margin-bottom: 2.26rem;
+    }
+    &__title {
+      font-size: 2rem;
+      margin-bottom: 0.57rem;
+    }
+    &__description {
+      letter-spacing: -0.005em;
+    }
+  }
+}
