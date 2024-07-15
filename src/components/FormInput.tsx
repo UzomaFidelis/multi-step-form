@@ -1,5 +1,4 @@
 import { FormInputProps } from "../types";
-import { UserDataValidation } from "../types";
 import "../styles/formInput.scss";
 import Step1 from "./Step1";
 import Step2 from "./Step2";

@@ -1,4 +1,4 @@
-import { FormStepProps, UserInfo } from "../types";
+import { UserInfo } from "../types";
 import "../styles/step4.scss";
 import { plansData, addonsData } from "../data";
 
